@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Space | Design &amp; Construct, founded in 1980, is a leading name for house construction in Edappally, Ernakulam. |</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        body {
+            background: url('/assets/img/banner1.webp') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+         .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .nav-tabs .nav-link {
+            color: #333;
+        }
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+            border-bottom: 2px solid #007bff;
+        }
+        .mb-3{
+            padding-top: 20px;
+        }
+
+        /* .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        } */
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:disabled {
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+   
+     
+    <div class="container">
+        
+        <form id="multiStepForm">
+            <!-- Step 1: Personal Details -->
+            <div class="form-step active" id="step1">
+                <h3>Personal Details</h3>
+                 
+                <div class="mb-3">
+                    <label class="form-label required">Store Name *</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">Seller Type *</label>
+                    <select class="form-control  " required>
+                        <option>Material Vendor</option>
+                        <option>Contractor</option>
+                        <option>Architect</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">PIN Code *</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Alternative Phone Number</label>
+                    <input type="tel" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contact Person’s Name *</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="button-group">
+                    <button type="button" onclick="nextStep(2)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Account Details -->
+            <div class="form-step" id="step2">
+                <h3>Account Details</h3>
+            <div class="mb-3"> 
+                <label>Pan card Number</label>
+                <input type="text" required> <br>
+            </div>
+            
+            <div class="mb-3">
+                <label>Upload your Pan Card</label><br>
+                <input type="file" required><br>
+            </div>
+            <div class="mb-3"> 
+                <label>GSTIN</label>
+                <input type="text" required><br>
+            </div>
+            <div class="mb-3"> 
+                <label>Bank Name</label>
+                <input type="text" required><br>
+            </div>
+            <div class="mb-3"> 
+                <label>Bank Account Name</label>
+                <input type="text" required><br>
+            </div>
+            <div class="mb-3"> 
+                <label>Bank Account Number</label>
+                <input type="text" required><br>
+            </div>
+            <div class="mb-3"> 
+                <label>ISFC Code</label>
+                <input type="text" required><br>
+            </div>
+            <div class="mb-3"> 
+                <label>  Branch Name</label>
+                <input type="text" required><br>
+            </div>
+            <div class="mb-3">
+                <label class="form-label required">Registerd as MSME? *</label>
+                <select class="form-control  " required>
+                    <option>yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label>NON MSME Declaration</label><br>
+                <input type="file" required><br>
+            </div>
+                <div class="button-group">
+                    <button type="button" onclick="prevStep(1)">Previous</button>
+                    <button type="button" onclick="nextStep(3)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Custom -->
+            <div class="form-step" id="step3">
+                <h3>Custom Details</h3>
+                <label>Additional Info</label>
+                <input type="text">
+                <div class="button-group">
+                    <button type="button" onclick="prevStep(2)">Previous</button>
+                    <button type="button" onclick="nextStep(4)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Finish -->
+            <div class="form-step" id="step4">
+                <h3>Finish</h3>
+                <p>Review your details before submitting.</p>
+                <div class="button-group">
+                    <button type="button" onclick="prevStep(3)">Previous</button>
+                    <button type="submit" ><a href="index.html" style="text-decoration: none; color: white;">submit</a></button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function nextStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+        }
+        function prevStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+        }
+
+ 
+
+    </script>
+ 
+
+</body>
+</html>
