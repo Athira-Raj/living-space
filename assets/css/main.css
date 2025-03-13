@@ -2443,12 +2443,4 @@ section,
 
 
 
-
-.parterbody{
-  background: url('/assets/img/blog2.jpg') no-repeat center center;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} 
+ 
