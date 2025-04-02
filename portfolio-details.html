@@ -23,6 +23,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -44,7 +45,7 @@
           <li><a href="index.html" >Home</a></li>
           <li><a href="partner.html">Partner with us</a></li>
            
-          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="blog.html"  >Blog</a></li>
          
           <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
@@ -61,7 +62,7 @@
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
       <div class="container position-relative">
         <h1>Portfolio Details</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <!-- <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p> -->
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
@@ -70,9 +71,77 @@
         </nav>
       </div>
     </div><!-- End Page Title -->
-
+    <section class="portfolio-section">
+      <h2 class="portfolio-title">Our Portfolio</h2>
+      <div class="containerportdet">
+        <div class="containerportdet__img-holder">
+            <img src="/assets/img/livingZA/port1.png" alt="Image">
+        </div>
+        <div class="containerportdet__img-holder">
+            <img src="/assets/img/livingZA/port2.png" alt="Image">
+        </div>
+        <div class="containerportdet__img-holder">
+            <img src="/assets/img/livingZA/port3.png" alt="Image">
+        </div>
+        <div class="containerportdet__img-holder">
+            <img src="/assets/img/livingZA/port4.png" alt="Image">
+        </div>
+        <div class="containerportdet__img-holder">
+          <img src="/assets/img/livingZA/port5.png" alt="Image">
+      </div>
+      <div class="containerportdet__img-holder">
+        <img src="/assets/img/livingZA/port6.png" alt="Image">
+    </div>
+    <div class="containerportdet__img-holder">
+      <img src="/assets/img/livingZA/port7.png" alt="Image">
+  </div>
+        <div class="containerportdet__img-holder">
+            <img src="/assets/img/livingZA/port8.png" alt="Image">
+        </div>
+        <!-- <div class="container__img-holder">
+            <img src="/assets/img/livingZA/port9.png" alt="Image">
+        </div> -->
+    </div>
+  
+    <div class="img-popup">
+        <img src="" alt="Popup Image">
+        <div class="close-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+  
+    <script>
+        $(document).ready(function() {
+  
+            // required elements
+            var imgPopup = $('.img-popup');
+            var imgCont  = $('.containerportdet__img-holder');
+            var popupImage = $('.img-popup img');
+            var closeBtn = $('.close-btn');
+  
+            // handle events
+            imgCont.on('click', function() {
+                var img_src = $(this).children('img').attr('src');
+                popupImage.attr('src', img_src);
+                imgPopup.addClass('opened');
+            });
+  
+            imgPopup.add(closeBtn).on('click', function() {
+                imgPopup.removeClass('opened');
+                popupImage.attr('src', '');
+            });
+  
+            popupImage.on('click', function(e) {
+                e.stopPropagation();
+            });
+  
+        });
+    </script>
+  
+  </section>
     <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+    <!-- <section id="portfolio-details" class="portfolio-details section">
 
       <div class="container" data-aos="fade-up">
 
@@ -173,7 +242,8 @@
 
       </div>
 
-    </section><!-- /Portfolio Details Section -->
+    </section> -->
+    <!-- /Portfolio Details Section -->
 
   </main>
 
